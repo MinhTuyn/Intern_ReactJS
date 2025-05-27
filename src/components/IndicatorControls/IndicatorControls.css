@@ -1,0 +1,423 @@
+.indicator-controls {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 12px;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 12px 0 16px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 20;
+  justify-content: center;
+}
+
+.chart-container.dark .indicator-controls {
+  background: #222222;
+  border: 1px solid #303030;
+}
+
+.chart-container.light .indicator-controls {
+  background: #fdfdff;
+  border: 1px solid #e7eaf3;
+}
+
+.chart-container.light .indicator-header {
+  background: #f8f9fc;
+}
+
+.indicator-header:hover {
+  background: #333333;
+}
+
+.chart-container.light .indicator-header:hover {
+  background: #eef2f7;
+}
+
+.indicator-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.chart-container.dark .indicator-toggle-btn {
+  color: #e0e7ff;
+}
+
+.chart-container.light .indicator-toggle-btn {
+  color: #334155;
+}
+
+.indicator-icon {
+  font-size: 18px;
+}
+
+.expand-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.indicator-panel {
+  padding: 10px 16px 16px;
+  max-height: 360px;
+  overflow-y: auto;
+  animation: slideDown 0.3s ease-out;
+}
+
+.chart-container.dark .indicator-panel {
+  border-top-color: #303030;
+}
+
+.chart-container.light .indicator-panel {
+  border-top-color: #e7eaf3;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.indicator-group {
+  flex: 0 0 auto;
+  width: 280px;
+  padding: 15px;
+  border: 1px solid;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.indicator-title {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chart-container.dark .indicator-group {
+  background-color: #2c2c2c;
+  border-color: #383838;
+}
+.chart-container.dark .indicator-group:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.chart-container.dark .indicator-title {
+  color: #d9d9d9;
+}
+
+.chart-container.light .indicator-title {
+  color: #212529;
+}
+
+.indicator-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 7px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.chart-container.light .indicator-group {
+  background-color: #ffffff;
+  border-color: #e0e7ff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.chart-container.light .indicator-group:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.chart-container.dark .indicator-checkbox {
+  color: #cbd5e1;
+}
+
+.chart-container.light .indicator-checkbox {
+  color: #4a5568;
+}
+
+.indicator-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-container.dark .indicator-checkbox input[type="checkbox"] {
+  border-color: #4f5b78;
+  background: #283040;
+}
+
+.chart-container.light .indicator-checkbox input[type="checkbox"] {
+  border-color: #cbd5e1;
+  background: #edf2f7;
+}
+
+.indicator-checkbox input[type="checkbox"]:checked {
+  border-color: #f7931a;
+  background: #f7931a;
+}
+
+.indicator-checkbox input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #fff;
+}
+
+.indicator-checkbox input[type="checkbox"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.4);
+}
+
+.indicator-settings {
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-left: 0;
+}
+
+.chart-container.dark .indicator-settings {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.chart-container.light .indicator-settings {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  font-size: 13.5px;
+}
+
+.setting-row:not(:last-child) {
+  border-bottom: 1px dashed;
+}
+
+.chart-container.dark .setting-row {
+  color: #c1c8d4;
+}
+
+.chart-container.dark .setting-row:not(:last-child) {
+  border-bottom-color: #424a5f;
+}
+
+.chart-container.light .setting-row {
+  color: #4b4f56;
+}
+
+.chart-container.light .setting-row:not(:last-child) {
+  border-bottom-color: #e2e8f0;
+}
+
+.setting-row label {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.setting-input {
+  width: 60px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid;
+  font-size: 13.5px;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.chart-container.dark .setting-input {
+  background: #283040;
+  border-color: #4f5b78;
+  color: #ffffff;
+}
+
+.chart-container.light .setting-input {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #2d3748;
+}
+
+.setting-input:focus-visible {
+  outline: none;
+  border-color: #f7931a;
+  box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.2);
+}
+
+.indicator-controls::-webkit-scrollbar {
+  height: 8px;
+}
+.indicator-group::-webkit-scrollbar {
+  width: 6px;
+}
+
+.indicator-controls::-webkit-scrollbar-track,
+.indicator-group::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chart-container.dark .indicator-controls::-webkit-scrollbar-thumb,
+.chart-container.dark .indicator-group::-webkit-scrollbar-thumb {
+  background: #424a5f;
+  border-radius: 3px;
+}
+
+.chart-container.light .indicator-controls::-webkit-scrollbar-thumb,
+.chart-container.light .indicator-group::-webkit-scrollbar-thumb {
+  background: #b0bac9;
+  border-radius: 3px;
+}
+
+.chart-container.dark .indicator-panel::-webkit-scrollbar-thumb:hover {
+  background: #5a6788;
+}
+.chart-container.light .indicator-panel::-webkit-scrollbar-thumb:hover {
+  background: #868e96;
+}
+
+.chart-container.dark .indicator-controls::-webkit-scrollbar-thumb:hover,
+.chart-container.dark .indicator-group::-webkit-scrollbar-thumb:hover {
+  background: #5a6788;
+}
+.chart-container.light .indicator-controls::-webkit-scrollbar-thumb:hover,
+.chart-container.light .indicator-group::-webkit-scrollbar-thumb:hover {
+  background: #868e96;
+}
+
+@media (max-width: 768px) {
+  .indicator-controls {
+    margin: 12px 16px;
+    max-width: calc(100% - 32px);
+  }
+
+  .indicator-group {
+    width: 250px;
+  }
+
+  .indicator-toggle-btn {
+    font-size: 14px;
+  }
+
+  .indicator-icon {
+    font-size: 17px;
+  }
+
+  .setting-row {
+    font-size: 13px;
+  }
+
+  .setting-input {
+    width: 60px;
+    padding: 5px 7px;
+    font-size: 12.5px;
+  }
+
+  .indicator-checkbox input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .indicator-controls {
+    margin: 8px 12px;
+    max-width: calc(100% - 24px);
+    border-radius: 10px;
+    padding: 8px;
+    gap: 10px;
+  }
+  .indicator-group {
+    width: 220px;
+    padding: 12px;
+  }
+  .indicator-toggle-btn {
+    font-size: 12.5px;
+    gap: 8px;
+  }
+
+  .indicator-icon {
+    font-size: 15px;
+  }
+
+  .indicator-title {
+    font-size: 12.5px;
+  }
+
+  .indicator-checkbox {
+    font-size: 12.5px;
+    gap: 8px;
+  }
+
+  .indicator-checkbox input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+
+  .setting-row {
+    font-size: 11.5px;
+    padding: 7px 0;
+  }
+
+  .setting-input {
+    width: 55px;
+    font-size: 12px;
+    padding: 5px 7px;
+  }
+
+  .indicator-checkbox:hover input[type="checkbox"] {
+    border-color: #f7931a;
+  }
+
+  .chart-container.dark .indicator-checkbox:hover input[type="checkbox"] {
+    border-color: #f7931a;
+  }
+
+  .setting-input:hover {
+    border-color: #f7931a;
+  }
+
+  .indicator-toggle-btn:focus-visible {
+    outline: 2px solid var(--focus-ring-color, #f7931a);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .indicator-toggle-btn:hover,
+  .indicator-toggle-btn:active,
+  .indicator-toggle-btn:focus {
+    background: transparent !important;
+  }
+}

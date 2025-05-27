@@ -1,0 +1,148 @@
+:root {
+  /* Light Theme Variables */
+  --bg-primary: #ffffff; /* Màu nền chính (ví dụ: cho card, modal) */
+  --bg-secondary: #f9fafb; /* Màu nền phụ (ví dụ: cho body) */
+  --bg-tertiary: #f3f4f6; /* Màu nền cho các element controls */
+  --bg-quaternary: #e5e7eb; /* Màu nền khi hover cho controls */
+
+  --text-primary: #111827; /* Màu chữ chính */
+  --text-secondary: #374151; /* Màu chữ phụ */
+  --text-accent: #2563eb; /* Màu chữ nhấn (ví dụ: link, title) */
+
+  --border-color: #e5e7eb; /* Màu viền */
+  --shadow-color: rgba(0, 0, 0, 0.05); /* Màu đổ bóng */
+
+  /* Button specific */
+  --btn-primary-bg: #3b82f6; /* Nền nút chính */
+  --btn-primary-text: #ffffff; /* Chữ nút chính */
+  --btn-secondary-bg: #e5e7eb; /* Nền nút phụ */
+  --btn-secondary-text: #374151; /* Chữ nút phụ */
+
+  /* Chart specific colors (can be overridden by lightweight-charts options) */
+  --chart-bg: var(--bg-primary);
+  --chart-text: var(--text-secondary);
+  --chart-grid: var(--border-color);
+  --candle-up: #26a69a;
+  --candle-down: #ef5350;
+  --volume-up-color: rgba(38, 166, 154, 0.5);
+  --volume-down-color: rgba(239, 83, 80, 0.5);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+html.dark {
+  /* Dark Theme Variables */
+  --bg-primary: #1f2937; /* gray-800 */
+  --bg-secondary: #111827; /* gray-900 */
+  --bg-tertiary: #374151; /* gray-700 */
+  --bg-quaternary: #4b5563; /* gray-600 */
+
+  --text-primary: #f9fafb; /* gray-50 */
+  --text-secondary: #d1d5db; /* gray-300 */
+  --text-accent: #60a5fa; /* blue-400 */
+
+  --border-color: #374151; /* gray-700 */
+  --shadow-color: rgba(0, 0, 0, 0.2);
+
+  --btn-primary-bg: #2563eb;
+  --btn-secondary-bg: #4b5563;
+  --btn-secondary-text: #f3f4f6;
+
+  --chart-bg: var(--bg-primary);
+  --chart-text: var(--text-secondary);
+  --chart-grid: var(--border-color);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, Inter, system-ui,
+    Avenir, Helvetica, Arial;
+  line-height: 1.5;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+/* A general container class */
+.container {
+  width: 90%;
+  max-width: 1100px; /* Giảm một chút để phù hợp hơn với nội dung biểu đồ */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1rem; /* Thêm padding top/bottom */
+  text-align: center; /* Căn giữa nội dung trong container */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--btn-secondary-bg); /* Sử dụng biến CSS */
+  color: var(--btn-secondary-text); /* Sử dụng biến CSS */
+  cursor: pointer;
+  transition: background-color 0.25s, border-color 0.25s,
+    transform 0.1s ease-out;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+button:hover {
+  border-color: var(--text-accent);
+  background-color: var(--bg-quaternary);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+button:active {
+  transform: translateY(1px); /* Hiệu ứng nhấn nút */
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Kiểu cho nút được chọn/active */
+button.active {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-bg);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Các biến này đã được định nghĩa ở trên, không cần ghi đè ở đây trừ khi có lý do đặc biệt */
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+  button.active {
+    background-color: #3b82f6; /* Màu primary cho light mode */
+    color: #ffffff;
+  }
+}
+
+html.dark button.active {
+  background-color: #2563eb; /* Màu primary cho dark mode */
+  color: #f9fafb;
+}
