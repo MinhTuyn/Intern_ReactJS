@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./IndicatorControls.css";
 
 // Định nghĩa kiểu dữ liệu cho các chỉ báo kỹ thuật

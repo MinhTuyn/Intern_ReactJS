@@ -21,10 +21,7 @@ import "./BitcoinChart.css";
 import IndicatorControls, {
   type IndicatorSettings,
 } from "../IndicatorControls/IndicatorControls";
-import {
-  calculateAllIndicators,
-  type IndicatorData,
-} from "../IndicatorControls/indicatorUtils";
+import { calculateAllIndicators } from "../IndicatorControls/indicatorUtils";
 
 // Định nghĩa các kiểu dữ liệu props và dữ liệu API
 interface BitcoinChartProps {
@@ -207,7 +204,7 @@ const BitcoinChart: React.FC<BitcoinChartProps> = ({
     },
   });
 
-  const [indicatorData, setIndicatorData] = useState<IndicatorData>({});
+  // const [indicatorData, setIndicatorData] = useState<IndicatorData>({}); // Removed as it's not read
   const [indicatorSeries, setIndicatorSeries] = useState<IndicatorSeries>({});
 
   // Xử lý khi thay đổi chỉ báo kỹ thuật
@@ -227,7 +224,7 @@ const BitcoinChart: React.FC<BitcoinChartProps> = ({
       allCandlestickData,
       indicators
     );
-    setIndicatorData(newIndicatorData);
+    // setIndicatorData(newIndicatorData); // Removed as indicatorData state is not used
 
     // Xoá các series chỉ báo cũ trước khi thêm mới
     Object.values(indicatorSeries).forEach((series) => {
@@ -244,7 +241,7 @@ const BitcoinChart: React.FC<BitcoinChartProps> = ({
 
     // Cập nhật scale cho các chỉ báo
     const hasRSI = indicators.rsi.enabled;
-    const hasMACD = indicators.macd.enabled;
+    // const hasMACD = indicators.macd.enabled; // Removed as it's not read
 
     chartRef.current.priceScale("right").applyOptions({
       scaleMargins: {
