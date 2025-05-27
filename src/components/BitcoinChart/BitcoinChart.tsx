@@ -111,7 +111,7 @@ interface IndicatorSeries {
 }
 
 // Lấy API key từ biến môi trường
-const COINMARKETCAP_API_KEY = import.meta.env.VITE_COINMARKETCAP_API_KEY;
+const COINMARKETCAP_API_KEY = "d0f8f9d1-cbc0-4348-b774-1da999722ddf";
 
 const BitcoinChart: React.FC<BitcoinChartProps> = ({
   symbol = "BTCUSDT",
@@ -731,20 +731,6 @@ const BitcoinChart: React.FC<BitcoinChartProps> = ({
       lastFetched: null,
       error: "Đang tải...",
     });
-
-    if (!COINMARKETCAP_API_KEY) {
-      console.error(
-        "CoinMarketCap API Key is not defined. Please set VITE_COINMARKETCAP_API_KEY in your .env file."
-      );
-      setPriceInfo({
-        currentPrice: null,
-        oneMinAgoPrice: null,
-        priceChangePercent: null,
-        lastFetched: new Date(),
-        error: "Lỗi cấu hình: API Key không tồn tại.",
-      });
-      return;
-    }
 
     try {
       let currentPrice: number | null = null;
